@@ -6,6 +6,7 @@
     import Navbar from '.././components/Navbar.svelte';
     import { auth } from "$lib/firebase";
     import { goto } from '$app/navigation';
+    import Authentication from '../components/Authentication.svelte';
 
 
     onMount(() => {
@@ -32,15 +33,16 @@
         currentUser = value.user;
     });
 
-    $: if(currentUser) {
-        goto('/main');
+    $: if(!currentUser) {
+        goto('/login');
     }
 
 </script>
-  {#if currentUser}
-  <Navbar />
-  {/if}
 
-
+{#if currentUser}
+<Navbar />
+{:else}
+<Authentication />
+{/if}
 
   <slot />
