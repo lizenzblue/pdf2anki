@@ -15,6 +15,6 @@ export const authHandlers = {
 	},
 	loginWithGoogle: async () => {
 		await signInWithPopup(auth, googleProvider);
-		goto('/main');
+		goto('/dashboard');
 	}
 };

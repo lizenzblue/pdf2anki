@@ -1,5 +1,5 @@
 <script lang="ts">
-    import InputForm from '.././components/InputForm.svelte';
+    import Authentication from '../components/Authentication.svelte';
 </script>
 
-<InputForm />
+<Authentication />
