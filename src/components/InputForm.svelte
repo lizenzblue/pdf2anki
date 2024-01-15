@@ -40,13 +40,15 @@
         const url = await getDownloadURL(snapshot.ref);
 
         const fileMetadata = {
-        path: snapshot.ref.fullPath,
-        uploadedAt: Date.now(),
-        url: url
+            path: snapshot.ref.fullPath,
+            uploadedAt: Date.now(),
+            url: url
         };
+
         const metadataRef = doc(getFirestore(), 'user_files', user.uid, 'files', file.name);
         await setDoc(metadataRef, fileMetadata);
     };
+
 </script>
 
 <div class="flex items-center justify-center h-screen">
